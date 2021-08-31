@@ -1,7 +1,10 @@
 package com.technotech.javamongodb;
 
+import org.bson.Document;
+
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCursor;
 import com.technotech.model.Student;
 
 public class App {
@@ -15,5 +18,15 @@ public class App {
         MongoClient mongoClient = MongoClients.create(mongodbUrl);
         
         System.out.println(">>> Mongo COnnection Created Successfully :)");
+        
+//      Adding Document to MongoDB
+//        Document document = new Document(student.toMap());
+//        mongoClient.getDatabase("javamongodb").getCollection("students").insertOne(document);
+        
+//        Fetching Documents from MongoDB
+        MongoCursor<Document> cursor = mongoClient.getDatabase("javamongodb").getCollection("students").find().iterator();
+        while (cursor.hasNext()) {
+			System.out.println(cursor.next().toJson());
+		}
     }
 }
