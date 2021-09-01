@@ -7,6 +7,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet({ "/ServletTwo", "/Two" })
 public class ServletTwo extends HttpServlet {
@@ -14,8 +15,10 @@ public class ServletTwo extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String name = request.getParameter("name");
-		String age = request.getParameter("age");
+		HttpSession httpSession = request.getSession();
+		
+		String name = httpSession.getAttribute("name").toString();
+		String age = httpSession.getAttribute("age").toString();
 //		Cookie[] cookies = request.getCookies();
 //		for(Cookie cookie: cookies) {
 //			if(cookie.getName().equals("keyName")) {

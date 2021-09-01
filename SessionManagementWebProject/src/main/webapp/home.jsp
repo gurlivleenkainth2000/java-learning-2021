@@ -8,8 +8,8 @@
 </head>
 <body>
 	
-	<h3>Name is: <%= request.getParameter("name") %></h3>
-	<h3>Age is: <%= request.getParameter("age") %></h3>
+	<h3>Name is: <%= session.getAttribute("name") %></h3>
+	<h3>Age is: <%= session.getAttribute("age") %></h3>
 
 </body>
 </html>
