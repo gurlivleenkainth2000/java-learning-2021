@@ -7,20 +7,9 @@
 <title>Home</title>
 </head>
 <body>
-	<%!
-		String name = "NA";
-	%>
 	
-	<%
-		Cookie[] cookies = request.getCookies();
-		for(Cookie cookie: cookies) {
-			if(cookie.getName().equals("keyName")) {
-				name = cookie.getValue();
-			}
-		}
-	%>
-	
-	<h3>Name is: <%= name %></h3>
+	<h3>Name is: <%= request.getParameter("name") %></h3>
+	<h3>Age is: <%= request.getParameter("age") %></h3>
 
 </body>
 </html>

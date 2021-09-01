@@ -23,7 +23,8 @@ public class ServletOne extends HttpServlet {
 		String htmlResponse = "<html>"
 				+ "<body><center>"
 				+ "<h4>Welcome To Servlet One</h4>"
-				+ "<a href='Two'>Enter Home</a>"
+				+ "<a href='home.jsp?name="+ name +"&age=21'>Enter Home</a>"
+//				+ "<a href='Two?name="+ name +"&age=21'>Enter Home</a>"
 				+ "</center></body>"
 				+ "</html>";
 		

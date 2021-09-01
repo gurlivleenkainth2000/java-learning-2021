@@ -14,19 +14,21 @@ public class ServletTwo extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String name = "NA";
-		Cookie[] cookies = request.getCookies();
-		for(Cookie cookie: cookies) {
-			if(cookie.getName().equals("keyName")) {
-				name = cookie.getValue();
-			}
-		}
+		String name = request.getParameter("name");
+		String age = request.getParameter("age");
+//		Cookie[] cookies = request.getCookies();
+//		for(Cookie cookie: cookies) {
+//			if(cookie.getName().equals("keyName")) {
+//				name = cookie.getValue();
+//			}
+//		}
 		
 		response.setContentType("text/html");
 		String htmlResponse = "<html>"
 				+ "<body><center>"
-				+ "<h4>Welcome To Servlet One</h4>"
-				+ "Name: " + name
+				+ "<h4>Welcome To Servlet Two</h4>"
+				+ "Name: " + name + "<br>"
+				+ "Age: " + age
 				+ "</center></body>"
 				+ "</html>";
 		
