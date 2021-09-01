@@ -28,8 +28,8 @@ public class ServletOne extends HttpServlet {
 				+ "</center></body>"
 				+ "</html>";
 		
-		Cookie cookie = new Cookie("keyName", name);
-		response.addCookie(cookie);
+//		Cookie cookie = new Cookie("keyName", name);
+//		response.addCookie(cookie);
 		
 		PrintWriter out = response.getWriter();
 		out.println(htmlResponse);
