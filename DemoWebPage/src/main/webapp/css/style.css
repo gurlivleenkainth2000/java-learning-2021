@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+:root {
+  --light: #d8d7d7;
+}
+
+.card {
+  margin-bottom: 1.5em;
+}
+
+.card,
+.img-rounded {
+  border-radius: 1.5rem;
+}
+
+.img-rounded {
+  padding: 10px;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.card:hover {
+  box-shadow: 4px 4px 10px var(--light), -4px -4px 10px var(--light);
+}
+
+.text-limit {
+  width: 88%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
